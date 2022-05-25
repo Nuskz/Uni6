@@ -12,8 +12,12 @@ public class Uni6Exe01 {
         int[] numeros = new int[10];
         
         for (int i = 0; i < 10; i++) {
-            
-
-        }    
+            System.out.println("Informe o " + (i + 1) + "° número: ");
+            numeros[i] = input.nextInt();
+        } 
+        for (int i = numeros.length - 1; i >= 0; i--) {
+            System.out.println(numeros[i]);
+        }
+        input.close();   
     }
 }
