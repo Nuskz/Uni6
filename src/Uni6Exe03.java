@@ -30,7 +30,7 @@ public class Uni6Exe03 {
     public double[] ajustarValores(double[] valores) {
         double aumento = 0;
         for (int i = 0; i < valores.length; i++) {
-            System.out.println(valores[i]);
+            
             if (valores[i] % 2 == 0) {
                 aumento = valores[i] * 0.02;
                 valores[i] += aumento;
@@ -43,6 +43,7 @@ public class Uni6Exe03 {
         }
         return valores;
     }
+    
     public void escreverValores (double[] valores){
         System.out.println("Valores Atualizados: ");
         for (int i = 0; i < valores.length; i++) {
