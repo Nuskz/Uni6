@@ -9,20 +9,20 @@ import java.util.Scanner;
  * média.
  */
 public class Uni6Exe02 {
-    public static void main(String[] args) {
-        new Uni6Exe02();
-    }
-
+    
     public Uni6Exe02() {
         Scanner input = new Scanner(System.in);
         double[] valores = new double[12];
-
+        
         lerValores(input, valores);
         double media = calcularMedia(valores, input);
         escreverMedia(media, valores);
         input.close();
     }
-
+    public static void main(String[] args) {
+        new Uni6Exe02();
+    }
+    
     public double[] lerValores(Scanner input, double[] valores) {
 
         for (int i = 0; i < 12; i++) {

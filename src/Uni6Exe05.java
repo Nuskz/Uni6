@@ -31,25 +31,41 @@ import java.util.Scanner;
  * -10 “Vocês se odeiam!”
  */
 public class Uni6Exe05 {
-
-    public static void main(String[] args) {
-
+    public Uni6Exe05() {
         Scanner input = new Scanner(System.in);
-
         String respostaMoca[] = new String[5];
         String[] respostaRapaz = new String[5];
-
         String[] perguntas = { "Gosta de música sertaneja?", "Gosta de futebol?", "Gosta de seriados?",
                 "Gosta de redes sociais?", "Gosta da Oktoberfest?" };
+        respostaRapaz = lerRespostasRapaz(input, perguntas, respostaRapaz);
+        respostaMoca = lerRespostasMoca(input, perguntas, respostaMoca);
+        int afinidade = calcularAfinidade(respostaRapaz, respostaMoca);
+        escreverAfinidade(afinidade);
+        input.close();
+    }
 
-        for (int i = 0; i < perguntas.length; i++) {
-            System.out.println(perguntas[i]);
-            respostaMoca[i] = input.next();
-        }
+    public static void main(String[] args) {
+        new Uni6Exe05();
+
+    }
+
+    public String[] lerRespostasRapaz(Scanner input, String[] perguntas, String[] respostaRapaz) {
         for (int i = 0; i < perguntas.length; i++) {
             System.out.println(perguntas[i]);
             respostaRapaz[i] = input.next();
         }
+        return respostaRapaz;
+    }
+
+    public String[] lerRespostasMoca(Scanner input, String[] perguntas, String[] respostaMoca) {
+        for (int i = 0; i < perguntas.length; i++) {
+            System.out.println(perguntas[i]);
+            respostaMoca[i] = input.next();
+        }
+        return respostaMoca;
+    }
+
+    public int calcularAfinidade(String[] respostaRapaz, String[] respostaMoca) {
         int afinidade = 0;
 
         for (int i = 0; i < 5; i++) {
@@ -62,22 +78,16 @@ public class Uni6Exe05 {
             } else {
                 afinidade++;
             }
-
         }
-        /*
-         * Afinidade Mensagem
-         * 15 “Casem!
-         * 10 a 14 “Vocês têm muita coisa em comum!”
-         * 5 a 9 “Talvez não dê certo :(”
-         * 0 a 4 “Vale um encontro.”
-         * -1 a -9 “Melhor não perder tempo”
-         * -10 “Vocês se odeiam!”
-         */
-        if (afinidade == 15){
+        return afinidade;
+    }
+
+    public void escreverAfinidade(int afinidade) {
+        if (afinidade == 15) {
             System.out.println("Casem!");
-        } else if (afinidade <= 14 && afinidade >= 10){
+        } else if (afinidade <= 14 && afinidade >= 10) {
             System.out.println("Vocês têm muita coisa em comum!");
-        } else if (afinidade <= 9 && afinidade >= 5){
+        } else if (afinidade <= 9 && afinidade >= 5) {
             System.out.println("Talvez não dê certo :(");
         } else if (afinidade <= 4 && afinidade >= 0) {
             System.out.println("“Vale um encontro");
@@ -86,7 +96,5 @@ public class Uni6Exe05 {
         } else {
             System.out.println("Vocês se odeiam!");
         }
-
-            input.close();
     }
 }

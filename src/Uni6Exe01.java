@@ -12,6 +12,11 @@ public class Uni6Exe01 {
         lerNumeros(input, numeros);
         escreverNumeros(numeros);
         input.close();
+        
+    }
+    public static void main(String[] args) {
+
+        new Uni6Exe01();
 
     }
 
@@ -31,9 +36,4 @@ public class Uni6Exe01 {
 
     }
 
-    public static void main(String[] args) {
-
-        new Uni6Exe01();
-
-    }
 }
