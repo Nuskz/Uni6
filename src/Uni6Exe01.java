@@ -5,19 +5,37 @@ Descreva um algoritmo que leia 10 números inteiros e os coloque em um vetor de 
  Escreva na ordem inversa em que foram lidos. 
  Faça um método para ler e outro para escrever.
 */
+
 public class Uni6Exe01 {
-    public static void main(String[] args) {
+
+    public Uni6Exe01() {
         Scanner input = new Scanner(System.in);
-        
+
+        int[] resultado = lerNumeros(input);
+        escreverNumeros(resultado);
+        input.close();
+    }
+
+    public int[] lerNumeros(Scanner input) {
+
         int[] numeros = new int[10];
-        
+
         for (int i = 0; i < 10; i++) {
             System.out.println("Informe o " + (i + 1) + "° número: ");
             numeros[i] = input.nextInt();
-        } 
-        for (int i = numeros.length - 1; i >= 0; i--) {
-            System.out.println(numeros[i]);
         }
-        input.close();   
+        return numeros;
+    }
+
+    public void escreverNumeros(int[] resultado) {
+
+        for (int i = resultado.length - 1; i >= 0; i--) {
+            System.out.println(resultado[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        new Uni6Exe01();
+
     }
 }
