@@ -51,8 +51,8 @@ public class Uni6Exe06 {
   }
   public boolean confirmarValores(double valor, double[] valores) {
     boolean confirmador = false;
-    while (confirmador != true){
-      int i = 0;
+    int i = 0;
+    while (confirmador != true){     
       if (valor == valores[i]){
         confirmador = true;
       } else confirmador = false;
