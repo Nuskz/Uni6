@@ -29,9 +29,10 @@ public class Uni6Exe07Ter {
         Scanner input = new Scanner(System.in);
         int quantidade = lerQuantidade(input);
         int[] vetor = new int[quantidade];
-        int[] vetorOrdem = new int [vetor.length];
+        int[] vetorOrdem = new int[vetor.length];
         vetor = lerVetor(input, vetor);
-
+        vetorOrdem = organizarVetor(vetor, vetorOrdem);
+        escreverVetor(vetor, vetorOrdem);
         input.close();
     }
 
@@ -51,7 +52,7 @@ public class Uni6Exe07Ter {
         while (i < vetor.length) {
             System.out.print("\nInforme o " + (i + 1) + " ° valor: ");
             int num = input.nextInt();
-             
+
             boolean igual = false;
             for (int j = 0; j < vetor.length; j++) {
                 if (vetor[j] == num) {
@@ -59,23 +60,51 @@ public class Uni6Exe07Ter {
                 }
             }
             if (igual) {
-                System.out.print("O valor: " + vetor[i] + " já foi informado, insira um diferente: ");
+                System.out.println("O valor: " + num + " já foi informado, insira um diferente: ");
                 i--;
             } else {
                 vetor[i] = num;
-                i++;
             }
 
+            i++;
         }
         return vetor;
     }
-    public int[] organizarVetor (int[] vetor) {
 
+    public int[] organizarVetor(int[] vetor, int[] vetorOrdem) {
+        int aux = 0;
+        boolean controle;
+        for (int i = 0; i < vetorOrdem.length; i++) {
+            vetorOrdem[i] = vetor[i];
+        }
+        for (int i = 0; i < vetorOrdem.length; i++) {
+            controle = true;
+            for (int j = 0; j < (vetorOrdem.length - 1); j++) {
+                if (vetorOrdem[j] > vetorOrdem[j + 1]) {
+                    aux = vetorOrdem[j];
+                    vetorOrdem[j] = vetorOrdem[j + 1];
+                    vetorOrdem[j + 1] = aux;
+                    controle = false;
+                }
 
+            }
+            if (controle) {
+                break;
+            }
+        }
 
-
-
-        return null;
+        return vetorOrdem;
     }
 
+    public void escreverVetor(int[] vetor, int[] vetorOrdem) {
+        System.out.print("Vetor Origem: ");
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print("[" + vetor[i] + "]");
+        }
+        System.out.print("\nVetor Ordenado: ");
+        for (int i = 0; i < vetorOrdem.length; i++) {
+            System.out.print("[" + vetorOrdem[i] + "]");
+        }
+
+    }
 }
