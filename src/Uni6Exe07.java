@@ -44,7 +44,6 @@ public class Uni6Exe07Ter {
         System.out.print("Digite a quantidade de elementos(Limite de 20): ");
         int quantidade = input.nextInt();
         return quantidade;
-
     }
 
     public int[] lerVetor(Scanner input, int[] vetor) {
@@ -52,7 +51,6 @@ public class Uni6Exe07Ter {
         while (i < vetor.length) {
             System.out.print("\nInforme o " + (i + 1) + " ° valor: ");
             int num = input.nextInt();
-
             boolean igual = false;
             for (int j = 0; j < vetor.length; j++) {
                 if (vetor[j] == num) {
@@ -65,7 +63,6 @@ public class Uni6Exe07Ter {
             } else {
                 vetor[i] = num;
             }
-
             i++;
         }
         return vetor;
@@ -86,13 +83,11 @@ public class Uni6Exe07Ter {
                     vetorOrdem[j + 1] = aux;
                     controle = false;
                 }
-
             }
             if (controle) {
                 break;
             }
         }
-
         return vetorOrdem;
     }
 
@@ -105,6 +100,5 @@ public class Uni6Exe07Ter {
         for (int i = 0; i < vetorOrdem.length; i++) {
             System.out.print("[" + vetorOrdem[i] + "]");
         }
-
     }
 }
