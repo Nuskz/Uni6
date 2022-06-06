@@ -24,8 +24,8 @@ Vetor ordenado: [0][2][3][4][6]
  */
 import java.util.Scanner;
 
-public class Uni6Exe07Ter {
-    public Uni6Exe07Ter() {
+public class Uni6Exe07 {
+    public Uni6Exe07() {
         Scanner input = new Scanner(System.in);
         int quantidade = lerQuantidade(input);
         int[] vetor = new int[quantidade];
@@ -37,7 +37,7 @@ public class Uni6Exe07Ter {
     }
 
     public static void main(String[] args) {
-        new Uni6Exe07Ter();
+        new Uni6Exe07();
     }
 
     public int lerQuantidade(Scanner input) {
