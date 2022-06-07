@@ -13,9 +13,9 @@ qual a nota atribuída pela mulher mais jovem;
 quantas das mulheres com mais de 50 anos deram nota superior a média recebida pelo cinema.
 Utilize os conceitos aprendidos sobre vetores (ou mesmo o uso de matriz) e métodos para a resolução deste exercício.
 */
-public class Uni6Exe09Ter {
-    public Uni6Exe09Ter() {
-        final int tamanho = 5;
+public class Uni6Exe09 {
+    public Uni6Exe09() {
+        final int tamanho = 30;
         Scanner input = new Scanner(System.in);
         int[] notas = new int[tamanho];
         int[] idades = new int[tamanho];
@@ -36,7 +36,7 @@ public class Uni6Exe09Ter {
     }
 
     public static void main(String[] args) {
-        new Uni6Exe09Ter();
+        new Uni6Exe09();
     }
 
     public int ler(Scanner input, String mensagem) {
